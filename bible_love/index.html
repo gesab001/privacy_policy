@@ -2,11 +2,11 @@
 
 <html lang="en">
 <head>
-<title>Privacy Policy for Creeping Compromise - FreePrivacyPolicy.com</title>
+<title id="title">Privacy Policy for </title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/styles.css" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
 
 
 <body>
@@ -14,14 +14,14 @@
 <div class="page">
 <div class="header">
 <div class="container">
-<p class="title">Privacy Policy for Creeping Compromise</p>
+<p class="title">Privacy Policy for </p>
 </div>
 </div>
 <div class="translations-content-container">
 <div class="container">
 <div class="tab-content translations-content-item en visible" id="en">
 <h1>Privacy Policy</h1>
-<p>Last updated: October 08, 2022</p>
+<p id="lastUpdate" >Last updated: </p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
 <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/" target="_blank">Free Privacy Policy Generator</a>.</p>
 <h1>Interpretation and Definitions</h1>
@@ -37,10 +37,10 @@
 <p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
 </li>
 <li>
-<p><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named Creeping Compromise</p>
+<p><strong>Application</strong> means the software program provided by the Company downloaded by You on any electronic device, named <span id="applicationTitle"></span></p>
 </li>
 <li>
-<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Creeping Compromise.</p>
+<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to <span id="company"</span></p>
 </li>
 <li>
 <p><strong>Country</strong> refers to: New Zealand</p>
@@ -154,7 +154,7 @@
 <h1>Contact Us</h1>
 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
 <ul>
-<li>By email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2838686828282d5dbddc4d3dcdcdbf2d5dfd3dbde9cd1dddf">[email&#160;protected]</a></li>
+<li id="email">By email: </li>
 </ul>
 </div>
 </div>
@@ -163,4 +163,41 @@
 
 </body>
 
+<script>
+
+function loadAppData(data){
+ var appTitle =  data["appTitle"];
+ var lastUpdate =  data["lastUpdate"];//November 24, 2022";
+ var companyInformation =  data["companyInformation"];//"Love Chapter";
+ var companyCountry =  data["companyCountry"];//"New Zealand";
+ var contactPageUrl =  data["contactPageUrl"];
+ var contactEmail =  data["contactEmail"];//144000giovanni@gmail.com";
+ console.log(appTitle);
+ document.getElementById("title").innerHTML =  document.getElementById("title").innerHTML + " " + appTitle;
+ document.querySelector(".title").innerHTML = document.querySelector(".title").innerHTML + " " + appTitle;
+ document.getElementById("applicationTitle").innerHTML = appTitle;
+ 
+ console.log(lastUpdate);
+ 
+  document.getElementById("lastUpdate").innerHTML = document.getElementById("lastUpdate").innerHTML + " " + lastUpdate;
+ console.log(companyInformation);
+  document.getElementById("company").innerHTML = companyInformation;
+
+ console.log(companyCountry);
+ console.log(contactEmail);
+  document.getElementById("email").innerHTML = document.getElementById("email").innerHTML + " " + contactEmail;
+
+}
+
+function fetchTitles(filename){
+	console.log("fetch appdata");
+fetch(filename)
+  .then((response) => response.json())
+  .then(loadAppData);
+  
+}
+
+
+fetchTitles("app.json");
+</script>
 </html>
