@@ -1,0 +1,8 @@
+{"appTitle": "Bible - Love",
+ "lastUpdate": "November 24, 2022",
+ "companyInforation": "Love Chapter",
+ "companyCountry": "New Zealand",
+ "contactPageUrl": "",
+ "contactEmail": "144000giovanni@gmail.com"
+
+}
